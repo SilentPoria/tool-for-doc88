@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "下载工具",
+    "description" : "将道客88文档以图片形式下载到本地",
+    "homepage_url": "https://github.com/SilentPoria",
+    "author": "Poria",
+    "version": "1.0.0",
+    "permissions": ["activeTab", "scripting","downloads"],
+    "icons": {"16": "images/icon_main.png","32": "images/icon_main.png","48": "images/icon_main.png","128": "images/icon_main.png"},
+    "action": {"default_title": "download_file","default_popup": "popup.html"},
+    "host_permissions": ["<all_urls>"],
+    "background": {"service_worker": "background.js"},
+    "content_scripts": [
+        {
+          "matches": ["https://www.doc88.com/*"],
+          "js": ["content.js"]
+        }
+    ]
+  }
